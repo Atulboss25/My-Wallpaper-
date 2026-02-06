@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Wallpaper Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-top: 30px;
+      display: inline-block;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    select, input[type="file"], button {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    a.logout {
+      display: block;
+      margin-top: 20px;
+      color: #e74c3c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.logout:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Admin Panel</h1>
+
+  <!-- UPLOAD FORM -->
+  <form action="/upload" method="POST" enctype="multipart/form-data">
+    <label for="category">Select Category:</label>
+    <select name="category" id="category" required>
+      <option value="nature">Nature</option>
+      <option value="gaming">Gaming</option>
+      <option value="anime">Anime</option>
+    </select>
+
+    <label for="wallpaper">Choose Wallpapers (multiple):</label>
+    <input type="file" name="wallpaper" id="wallpaper" multiple required>
+
+    <button type="submit">Upload Wallpapers</button>
+  </form>
+
+  <!-- LOGOUT LINK -->
+  <a href="/logout" class="logout">Logout</a>
+
+</body>
+</html>
